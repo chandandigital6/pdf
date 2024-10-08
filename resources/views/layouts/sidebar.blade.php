@@ -3,7 +3,7 @@
     <a href="" class="brand-link">
         <img src="{{ asset('logo.jpg') }}" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Real Victory  </span>
+        <span class="brand-text font-weight-light">Goverment  of Assam  </span>
     </a>
 
     <!-- Sidebar -->
@@ -36,14 +36,14 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                      <a href="{{route('about.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-address-book"></i>
                         <p>
                             About Us
                         </p>
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="{{route('pdf.index')}}" class="nav-link">
                         <i class="nav-icon 	fa fa-address-book"></i>
@@ -53,7 +53,14 @@
                     </a>
                 </li>
 
-
+                <li class="nav-item">
+                    <a href="{{route('logout')}}" class="nav-link">
+                        <i class="nav-icon 	fa fa-address-book"></i>
+                        <p>
+                           logOut
+                        </p>
+                    </a>
+                </li>
 
 
             </ul>

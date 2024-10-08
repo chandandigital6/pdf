@@ -55,7 +55,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="#"><b>Real</b>Victory</a>
+        <a href="#"><b>Goverment</b>of Assam</a>
     </div>
     <div class="card register-card-body">
         <p class="login-box-msg">Register a new User</p>

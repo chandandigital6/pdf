@@ -56,7 +56,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Real</b>Victory</a>
+        <a href="#"><b>Goverment</b> of Assam</a>
     </div>
     <div class="card login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
@@ -94,12 +94,12 @@
                 </div>
             </div>
         </form>
-        <p class="mt-3 mb-1 text-center">
+        {{-- <p class="mt-3 mb-1 text-center">
             <a href="{{ route('registration') }}" class="btn btn-warning w-100">Register a new user</a>
         </p>
         <p class="mt-3 mb-1 text-center">
             <a href="{{ route('auth.forget') }}" class="btn btn-warning w-100">Forget password</a>
-        </p>
+        </p> --}}
     </div>
 </div>
 <script src="{{ asset('asset/plugins/jquery/jquery.min.js') }}"></script>
