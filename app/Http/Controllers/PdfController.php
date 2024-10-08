@@ -60,10 +60,27 @@ class PdfController extends Controller
 
     }
 
-    public function show(Pdf $pdf){
-
-        return view('pdf.show',compact('pdf'));
+    public function show($url)
+    {
+        // Fetch the PDF record by the `url` field
+        $pdf = Pdf::where('url', $url)->firstOrFail();
+        if(!$pdf){
+            abort(404);
+        }
+        // Pass the PDF record to the Blade view
+        return view('pdf.show', compact('pdf'));
     }
+
+
+    public function showQr($url)
+    {
+        // Fetch the PDF record by the `url` field
+        $pdf = Pdf::where('url', $url)->firstOrFail();
+
+        // Pass the PDF's URL to the Blade view for QR generation
+        return view('pdf.showqr', ['url' => $pdf->url]);
+    }
+
 
 
     public function generateQrCode($id)

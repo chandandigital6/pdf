@@ -72,7 +72,9 @@
                                         <td>
                                             <a href="{{ route('pdf.edit', $pdf->id) }}" class="btn btn-primary">Edit</a>
                                             <a href="{{ route('pdf.delete', $pdf->id) }}" class="btn btn-danger">Delete</a>
-                                            <a href="{{ route('pdf.show', $pdf->id) }}" class="btn btn-danger">show</a>
+                                            <a href="{{ route('pdf.show', $pdf->url) }}" class="btn btn-danger">Show</a>
+                                            <a href="{{ route('pdf.showQr', $pdf->url) }}" class="btn btn-danger">ShowQR</a>
+                                            {{-- {!! QrCode::size(200)->generate($url) !!} --}}
                                             {{-- <!-- Add delete button if needed -->
                                             <a href="{{ route('pdf.qrcode', $pdf->id) }}" class="btn btn-warning">generateQR</a> --}}
 
