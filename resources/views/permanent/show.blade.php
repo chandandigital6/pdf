@@ -23,6 +23,14 @@
             color: blue;
             font-weight: bold;
         }
+        .status-pending {
+            color: rgb(231, 235, 30);
+            font-weight: bold;
+        }
+        .status-rejected {
+            color: rgb(235, 30, 30);
+            font-weight: bold;
+        }
         .certificate-title {
             text-align: center;
             font-size: 1.5em;
