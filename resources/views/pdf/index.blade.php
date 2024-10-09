@@ -48,6 +48,7 @@
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>url</th>
+
                                     <th>Image</th>
                                     <th>QR Code</th>
                                     <th>Action</th>
@@ -67,7 +68,8 @@
                                         </td>
                                         <td>
                                             <!-- Display QR Code -->
-                                            {!! QrCode::size(200)->generate(asset('storage/' .  $pdf->image_pdf)) !!}
+                                            {{-- {!! QrCode::size(200)->generate(asset('storage/' .  $pdf->image_pdf)) !!} --}}
+                                            {!! QrCode::size(200)->generate($pdf->url) !!}
                                         </td>
                                         <td>
                                             <a href="{{ route('pdf.edit', $pdf->id) }}" class="btn btn-primary">Edit</a>
