@@ -43,6 +43,11 @@
             <th>NAME</th>
             <td>{{ $permanent->name }}</td>
         </tr>
+
+        <tr>
+            <th>GENDER</th>
+            <td>{{ $permanent->gender }}</td>
+        </tr>
         <tr>
             <th>FATHER NAME</th>
             <td>{{ $permanent->f_name }}</td>
