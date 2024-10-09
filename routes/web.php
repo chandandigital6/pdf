@@ -2,16 +2,11 @@
 
 
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AppointmentController;
-use App\Http\Controllers\BannerController;
-
-use App\Http\Controllers\PlanCOntroller;
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TeamController;
-use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PermanentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,15 +53,26 @@ Route::group(['middleware' => ['auth']],function (){
 
 
 
-    Route::get('pdf/index',[\App\Http\Controllers\PdfController::class,'index'])->name('pdf.index');
-    Route::get('pdf/create',[\App\Http\Controllers\PdfController::class,'create'])->name('pdf.create');
-    Route::post('pdf/store',[\App\Http\Controllers\PdfController::class,'store'])->name('pdf.store');
-    Route::get('pdf/edit/{pdf}',[\App\Http\Controllers\PdfController::class,'edit'])->name('pdf.edit');
-    Route::get('pdf/delete/{pdf}',[\App\Http\Controllers\PdfController::class,'delete'])->name('pdf.delete');
-    Route::get('/pdf/qrcode/{pdf}', [\App\Http\Controllers\PdfController::class, 'generateQrCode'])->name('pdf.qrcode');
+    Route::get('pdf/index',[PdfController::class,'index'])->name('pdf.index');
+    Route::get('pdf/create',[PdfController::class,'create'])->name('pdf.create');
+    Route::post('pdf/store',[PdfController::class,'store'])->name('pdf.store');
+    Route::get('pdf/edit/{pdf}',[PdfController::class,'edit'])->name('pdf.edit');
+    Route::get('pdf/delete/{pdf}',[PdfController::class,'delete'])->name('pdf.delete');
+    Route::get('/pdf/qrcode/{pdf}', [PdfController::class, 'generateQrCode'])->name('pdf.qrcode');
 
-    Route::get('pdf/{url}',[\App\Http\Controllers\PdfController::class,'showQr'])->name('pdf.showQr');
-    Route::post('pdf/update/{pdf}',[\App\Http\Controllers\PdfController::class,'update'])->name('pdf.update');
+    Route::get('pdf/{url}',[PdfController::class,'showQr'])->name('pdf.showQr');
+    Route::post('pdf/update/{pdf}',[PdfController::class,'update'])->name('pdf.update');
+
+
+ // permanrnt
+    Route::get('permanent/index', [PermanentController::class, 'index'])->name('permanent.index');
+    Route::get('permanent/create',[PermanentController::class,'create'])->name('permanent.create');
+    Route::post('permanent/store',[PermanentController::class,'store'])->name('permanent.store');
+    Route::get('permanent/edit/{permanent}',[PermanentController::class,'edit'])->name('permanent.edit');
+    Route::get('permanent/delete/{permanent}',[PermanentController::class,'delete'])->name('permanent.delete');
+    Route::get('/permanent/show/{permanent}', [PermanentController::class, 'show'])->name('permanent.show');
+    // Route::get('permanent/{url}',[PermanentController::class,'showQr'])->name('permanent.showQr');
+    Route::post('permanent/update/{permanent}',[PermanentController::class,'update'])->name('permanent.update');
 
 });
 
