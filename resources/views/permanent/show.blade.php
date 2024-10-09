@@ -78,7 +78,11 @@
         </tr>
         <tr>
             <th>STATUS</th>
-            <td class="{{ strtolower($permanent->status) == 'approved' ? 'status-approved' : '' }}">
+            <td class="
+                {{ strtolower($permanent->status) == 'approved' ? 'status-approved' : '' }}
+                {{ strtolower($permanent->status) == 'pending' ? 'status-pending' : '' }}
+                {{ strtolower($permanent->status) == 'rejected' ? 'status-rejected' : '' }}
+            ">
                 {{ ucfirst($permanent->status) }}
             </td>
         </tr>
