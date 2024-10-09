@@ -37,7 +37,7 @@ Route::get('reset-password',[AuthController::class,'reset_password'])->name('res
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
 
 
-
+Route::get('/{url}',[\App\Http\Controllers\PdfController::class,'show'])->name('pdf.show');
 Route::get('dashboard', [AuthController::class, 'dashboard'])
     ->middleware(['auth'])
     ->name('auth.dashboard');
@@ -64,7 +64,7 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('pdf/edit/{pdf}',[\App\Http\Controllers\PdfController::class,'edit'])->name('pdf.edit');
     Route::get('pdf/delete/{pdf}',[\App\Http\Controllers\PdfController::class,'delete'])->name('pdf.delete');
     Route::get('/pdf/qrcode/{pdf}', [\App\Http\Controllers\PdfController::class, 'generateQrCode'])->name('pdf.qrcode');
-    Route::get('/{url}',[\App\Http\Controllers\PdfController::class,'show'])->name('pdf.show');
+
     Route::get('pdf/{url}',[\App\Http\Controllers\PdfController::class,'showQr'])->name('pdf.showQr');
     Route::post('pdf/update/{pdf}',[\App\Http\Controllers\PdfController::class,'update'])->name('pdf.update');
 
