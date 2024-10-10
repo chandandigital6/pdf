@@ -32,8 +32,8 @@ Route::get('reset-password',[AuthController::class,'reset_password'])->name('res
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
 
 
-Route::get('/{url}',[\App\Http\Controllers\PdfController::class,'show'])->name('pdf.show');
-Route::get('dashboard', [AuthController::class, 'dashboard'])
+Route::get('/{url}',[PdfController::class,'show'])->name('pdf.show');
+Route::get('run/dashboard', [AuthController::class, 'dashboard'])
     ->middleware(['auth'])
     ->name('auth.dashboard');
 
