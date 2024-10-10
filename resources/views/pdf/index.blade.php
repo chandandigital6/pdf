@@ -48,7 +48,6 @@
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>url</th>
-
                                     <th>Image</th>
                                     <th>QR Code</th>
                                     <th>Action</th>
@@ -94,6 +93,7 @@
 
                     <div class="card-footer">
                         <!-- Pagination links can be added here if needed -->
+
                     </div>
                 </div>
             </div>
