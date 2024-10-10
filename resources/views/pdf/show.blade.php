@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive PDF Viewer</title>
+    <title>Responsive PDF Viewer with Zoom</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -13,13 +13,16 @@
         @media (min-width: 768px) {
             .embed-responsive {
                 height: 600px;
+                transform: scale(1); /* No scaling on larger screens */
             }
         }
 
-        /* For mobile devices, take up full height */
+        /* For mobile devices, decrease the zoom using scale */
         @media (max-width: 767px) {
             .embed-responsive {
-                height: 100vh; /* Full screen height */
+                height: 100vh;
+                transform: scale(0.9); /* Decrease zoom for mobile */
+                transform-origin: top left;
             }
         }
     </style>
