@@ -31,6 +31,8 @@ Route::get('forget',[AuthController::class,'forget'])->name('auth.forget');
 Route::post('forget',[AuthController::class,'forget_pass'])->name('auth.forget_pass');
 Route::get('reset-password',[AuthController::class,'reset_password'])->name('reset-password');
 Route::post('store-password',[AuthController::class,'store_password'])->name('store-password');
+Route::get('/caste/show/{caste}', [CasteController::class, 'show'])->name('caste.show');
+Route::get('/permanent/show/{permanent}', [PermanentController::class, 'show'])->name('permanent.show');
 
 
 Route::get('/{url}',[PdfController::class,'show'])->name('pdf.show');
@@ -71,7 +73,6 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('permanent/store',[PermanentController::class,'store'])->name('permanent.store');
     Route::get('permanent/edit/{permanent}',[PermanentController::class,'edit'])->name('permanent.edit');
     Route::get('permanent/delete/{permanent}',[PermanentController::class,'delete'])->name('permanent.delete');
-    Route::get('/permanent/show/{permanent}', [PermanentController::class, 'show'])->name('permanent.show');
     // Route::get('permanent/{url}',[PermanentController::class,'showQr'])->name('permanent.showQr');
     Route::post('permanent/update/{permanent}',[PermanentController::class,'update'])->name('permanent.update');
 
@@ -82,7 +83,6 @@ Route::group(['middleware' => ['auth']],function (){
     Route::post('caste/store',[CasteController::class,'store'])->name('caste.store');
     Route::get('caste/edit/{caste}',[CasteController::class,'edit'])->name('caste.edit');
     Route::get('caste/delete/{caste}',[CasteController::class,'delete'])->name('caste.delete');
-    Route::get('/caste/show/{caste}', [CasteController::class, 'show'])->name('caste.show');
     // Route::get('caste/{url}',[CasteController::class,'showQr'])->name('caste.showQr');
     Route::post('caste/update/{caste}',[CasteController::class,'update'])->name('caste.update');
 
