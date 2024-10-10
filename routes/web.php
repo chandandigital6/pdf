@@ -5,6 +5,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CasteController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermanentController;
 
@@ -73,6 +74,17 @@ Route::group(['middleware' => ['auth']],function (){
     Route::get('/permanent/show/{permanent}', [PermanentController::class, 'show'])->name('permanent.show');
     // Route::get('permanent/{url}',[PermanentController::class,'showQr'])->name('permanent.showQr');
     Route::post('permanent/update/{permanent}',[PermanentController::class,'update'])->name('permanent.update');
+
+
+    // caste
+    Route::get('caste/index', [CasteController::class, 'index'])->name('caste.index');
+    Route::get('caste/create',[CasteController::class,'create'])->name('caste.create');
+    Route::post('caste/store',[CasteController::class,'store'])->name('caste.store');
+    Route::get('caste/edit/{caste}',[CasteController::class,'edit'])->name('caste.edit');
+    Route::get('caste/delete/{caste}',[CasteController::class,'delete'])->name('caste.delete');
+    Route::get('/caste/show/{caste}', [CasteController::class, 'show'])->name('caste.show');
+    // Route::get('caste/{url}',[CasteController::class,'showQr'])->name('caste.showQr');
+    Route::post('caste/update/{caste}',[CasteController::class,'update'])->name('caste.update');
 
 });
 
