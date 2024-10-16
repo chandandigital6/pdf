@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-    <link rel="icon" href="{{asset('logo.jpg')}}" type="image/x-icon">
+
     <link rel="stylesheet" href="{{ asset('asset/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('asset/dist/css/adminlte.min.css') }}">
@@ -55,7 +55,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="#"><b>Goverment</b>of Assam</a>
+        <a href="#"><b>Goverment</b>of Odisa</a>
     </div>
     <div class="card register-card-body">
         <p class="login-box-msg">Register a new User</p>
