@@ -93,7 +93,7 @@
 
                     <div class="card-footer">
                         <!-- Pagination links can be added here if needed -->
-
+{{ $pdfData->links() }}
                     </div>
                 </div>
             </div>
