@@ -16,7 +16,7 @@ class PdfController extends Controller
         if (!empty($keyword)) {
             $pdf->where('title', 'like', "%$keyword%");
         }
-        $pdfData = $pdf->paginate(5);
+        $pdfData = $pdf->paginate(50);
 
         return view('pdf.index',compact('pdfData'));
     }
